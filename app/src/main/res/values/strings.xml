@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Rating</string>
+    <string name="iv_path">TODO</string>
+    <string name="rating">Rating</string>
+    <string name="arv_rating">4.2</string>
+    <string name="_4_2">4.2</string>
+    <string name="iv_star">TODO</string>
+    <string name="all1">All</string>
+    <string name="_12">(12)</string>
+    <string name="amount">(2)</string>
+    <string name="all">All</string>
+    <string name="all_amount">(2)</string>
+    <string name="comment">Comment</string>
+    <string name="comment_amount">(7)</string>
+    <string name="media">Media</string>
+    <string name="media_amount">(5)</string>
+    <string name="name">Kim Joong***</string>
+    <string name="date_time">06-04-2021 11:36</string>
+    <string name="comment_">I am very satisfied with this product</string>
+    <string name="show_name">Angela Soraphiare Shop</string>
+    <string name="reply">Hi, thank you for feedback</string>
+</resources>

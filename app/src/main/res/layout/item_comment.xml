@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="375dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="24dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_avt"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/avt1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textSize="14sp"
+        android:lineHeight="16dp"
+        android:fontFamily="@font/lexend_regular"
+        android:textColor="#9A9A9A"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_avt"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="12dp"
+        tools:targetApi="p"
+        tools:ignore="RtlCompat"/>
+
+    <RatingBar
+        android:id="@+id/rb_star_rating_bar"
+        style="@style/CustomRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="4dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:stepSize="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        tools:ignore="RtlCompat" />
+    
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:text="@string/date_time"
+        android:textSize="12sp"
+        android:lineHeight="16dp"
+        android:textColor="#9A9A9A"
+        android:fontFamily="@font/lexend_regular"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        tools:targetApi="p"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:lineHeight="16dp"
+        android:fontFamily="@font/lexend_regular"
+        android:textColor="@color/black"
+        android:text="@string/comment_"
+        tools:targetApi="p"
+        app:layout_constraintTop_toBottomOf="@id/iv_avt"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        tools:ignore="RtlCompat" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_comment"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        tools:ignore="RtlCompat">
+
+        <TextView
+            android:id="@+id/tv_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_name"
+            android:textSize="14sp"
+            android:lineHeight="17.5dp"
+            android:textColor="#9A9A9A"
+            android:fontFamily="@font/lexend_regular"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/tv_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reply"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:lineHeight="17.5dp"
+            android:fontFamily="@font/lexend_regular"
+            app:layout_constraintTop_toBottomOf="@id/tv_shop_name"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            tools:targetApi="p" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
