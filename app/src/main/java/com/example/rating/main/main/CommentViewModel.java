@@ -15,7 +15,7 @@ public class CommentViewModel extends ViewModel {
     private MutableLiveData<List<Comment>> mutableLiveData;
     private List<Comment> comments;
 
-    public CommentViewModel(Application application) {
+    public CommentViewModel() {
         mutableLiveData = new MutableLiveData<>();
         comments = new ArrayList<>();
         comments.add(new Comment(R.drawable.avt1,"Kim Joong***", "06-04-2021 11:36", 4, "I am very satisfied with this product "));
