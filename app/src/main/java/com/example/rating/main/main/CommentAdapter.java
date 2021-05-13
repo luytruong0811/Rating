@@ -1,8 +1,10 @@
 package com.example.rating.main.main;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -14,46 +16,89 @@ import com.example.rating.R;
 
 import java.util.List;
 
-public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentViewHolder> {
+class FilterVH extends RecyclerView.ViewHolder {
+
+    public RatingBar rbFiveStar;
+    public RatingBar rbFourStar;
+    public RatingBar rbThreeStar;
+    public RatingBar rbTwoStar;
+    public RatingBar rbOneStar;
+    public FilterVH(@NonNull View itemView) {
+        super(itemView);
+        rbFiveStar = itemView.findViewById(R.id.rb_rating_star_five);
+        rbFourStar = itemView.findViewById(R.id.rb_rating_star_four);
+        rbThreeStar = itemView.findViewById(R.id.rb_rating_star_three);
+        rbTwoStar = itemView.findViewById(R.id.rb_rating_star_two);
+        rbOneStar = itemView.findViewById(R.id.rb_rating_star_one);
+    }
+}
+
+class CommentVH extends RecyclerView.ViewHolder {
+    public ImageView ivAvt;
+    public TextView tvName;
+    public TextView tvDateTime;
+    public RatingBar rbStarRating;
+    public TextView tvComment;
+    public CommentVH(@NonNull View itemView) {
+        super(itemView);
+
+        ivAvt = itemView.findViewById(R.id.iv_avt);
+        tvName = itemView.findViewById(R.id.tv_name);
+        tvDateTime = itemView.findViewById((R.id.tv_date));
+        rbStarRating = itemView.findViewById(R.id.rb_star_rating_bar);
+        tvComment = itemView.findViewById(R.id.tv_comment);
+    }
+}
+
+public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Comment> comments;
-    private ItemClickListener itemClickListener;
+    Activity activity;
+    private int view_type_filter=1;
+    private int view_type_comment=0;
 
-    public CommentAdapter(List<Comment> comments, ItemClickListener itemClickListener) {
+    public CommentAdapter(List<Comment> comments, Activity activity) {
         this.comments = comments;
-        this.itemClickListener = itemClickListener;
+        this.activity = activity;
     }
 
     @Override
     public int getItemViewType(int position) {
         if(position==0) {
-            return 1;
+            return view_type_filter;
         }
-        return 2;
+        return view_type_comment;
     }
 
     @NonNull
     @Override
-    public CommentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if(viewType == 1) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        if(viewType == view_type_filter) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_rating_star, parent,false);
-            return new CommentViewHolder(view);
+            return new FilterVH(view);
         } else {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_comment, parent,false);
-            return new CommentViewHolder(view);
+            return new CommentVH(view);
         }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CommentViewHolder holder, int position) {
-        Comment comment = comments.get(position);
-        if (comment==null) {
-        } else {
-            holder.ivAvt.setImageResource(comment.getAvt());
-            holder.rbStarRating.setRating(comment.getRatingStar());
-            holder.tvDateTime.setText(comment.getDateTime());
-            holder.tvName.setText(comment.getName());
-            holder.tvComment.setText(comment.getComment());
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        if (holder instanceof CommentVH) {
+            Comment comment = comments.get(position);
+            CommentVH commentVH = (CommentVH) holder;
+            commentVH.ivAvt.setImageResource(comment.getAvt());
+            commentVH.rbStarRating.setRating(comment.getRatingStar());
+            commentVH.tvDateTime.setText(comment.getDateTime());
+            commentVH.tvName.setText(comment.getName());
+            commentVH.tvComment.setText(comment.getComment());
+        } else if(holder instanceof FilterVH) {
+            FilterVH filterVH = (FilterVH) holder;
+            filterVH.rbFiveStar.setRating(5);
+            filterVH.rbFourStar.setRating(4);
+            filterVH.rbThreeStar.setRating(3);
+            filterVH.rbTwoStar.setRating(2);
+            filterVH.rbOneStar.setRating(1);
         }
 
     }
@@ -66,22 +111,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
         return 0;
     }
 
-    public class CommentViewHolder extends RecyclerView.ViewHolder {
-        private ImageView ivAvt;
-        private TextView tvName;
-        private TextView tvDateTime;
-        private RatingBar rbStarRating;
-        private TextView tvComment;
-        public CommentViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            ivAvt = itemView.findViewById(R.id.iv_avt);
-            tvName = itemView.findViewById(R.id.tv_name);
-            tvDateTime = itemView.findViewById((R.id.tv_date));
-            rbStarRating = itemView.findViewById(R.id.rb_star_rating_bar);
-            tvComment = itemView.findViewById(R.id.tv_comment);
-        }
-    }
 
     public  interface  ItemClickListener {
         void getData(Comment comment);
