@@ -13,10 +13,11 @@ import java.util.List;
 
 public class CommentViewModel extends ViewModel {
     private MutableLiveData<List<Comment>> mutableLiveData;
+    private List<Comment> comments;
 
     public CommentViewModel(Application application) {
         mutableLiveData = new MutableLiveData<>();
-        List<Comment> comments = new ArrayList<>();
+        comments = new ArrayList<>();
         comments.add(new Comment(R.drawable.avt1,"Kim Joong***", "06-04-2021 11:36", 4, "I am very satisfied with this product "));
         comments.add(new Comment(R.drawable.avt2, "Park H***", "06-04-2021 11:36", 5, "Every spring I start going through dress withdrawals and go crazy over all the pretty spring dresses that come out haha. It’s like famine and then feast and dresses HAPPY SPRING! \n" +
                 "See more"));
@@ -28,6 +29,7 @@ public class CommentViewModel extends ViewModel {
         comments.add(new Comment(R.drawable.avt1,"Kim Joong***", "06-04-2021 11:36", 5, "I am very satisfied with this product "));
         comments.add(new Comment(R.drawable.avt1,"Kim Joong***", "06-04-2021 11:36", 3, "I am very satisfied with this product "));
         comments.add(new Comment(R.drawable.avt1,"Kim Joong***", "06-04-2021 11:36", 2, "I am very satisfied with this product "));
+        mutableLiveData.setValue(comments);
     }
     public LiveData<List<Comment>> getListCommentLiveData() {
         return mutableLiveData;
