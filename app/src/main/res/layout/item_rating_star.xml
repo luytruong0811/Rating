@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="375dp"
-    android:layout_height="82dp"
-    android:background="@color/white"
+    android:layout_width="wrap_content"
+    android:layout_height="98dp"
+    android:background="@drawable/custom_line"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/all"
-        android:layout_width="112dp"
+        android:layout_width="107dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_category"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
         tools:ignore="RtlCompat">
 
         <TextView
@@ -60,7 +59,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/comment"
-        android:layout_width="112dp"
+        android:layout_width="107dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_category"
         app:layout_constraintTop_toTopOf="parent"
@@ -112,7 +111,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/media"
-        android:layout_width="112dp"
+        android:layout_width="107dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_category"
         app:layout_constraintTop_toTopOf="parent"
@@ -164,12 +163,12 @@
     
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/five_star"
-        android:layout_width="65dp"
+        android:layout_width="62.4dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_category"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         tools:ignore="RtlCompat">
 
         <RatingBar
@@ -214,12 +213,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/four_star"
-        android:layout_width="65dp"
+        android:layout_width="62.4dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_category"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/five_star"
-        android:layout_marginStart="6dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="16dp"
         tools:ignore="RtlCompat">
 
         <RatingBar
@@ -264,12 +264,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/three_star"
-        android:layout_width="65dp"
+        android:layout_width="62.4dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_category"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/four_star"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="16dp"
         tools:ignore="RtlCompat">
 
         <RatingBar
@@ -314,12 +315,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/two_star"
-        android:layout_width="65dp"
+        android:layout_width="62.4dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_category"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/three_star"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="16dp"
         tools:ignore="RtlCompat">
 
         <RatingBar
@@ -364,12 +366,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/one_star"
-        android:layout_width="65dp"
+        android:layout_width="62.4dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_category"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/two_star"
         android:layout_marginStart="4dp"
+        android:layout_marginBottom="16dp"
         tools:ignore="RtlCompat">
 
         <RatingBar
@@ -411,5 +414,6 @@
             tools:targetApi="p"
             tools:ignore="RtlCompat" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

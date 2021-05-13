@@ -6,13 +6,19 @@ public class Comment {
     private String dateTime;
     private int ratingStar;
     private String comment;
+    private Boolean clReplay;
+    private String shopName;
+    private String reply;
 
-    public Comment(int avt, String name, String dateTime, int ratingStar, String comment) {
+    public Comment(int avt, String name, String dateTime, int ratingStar, String comment, Boolean clReplay, String shopName, String reply) {
         this.avt = avt;
         this.name = name;
         this.dateTime = dateTime;
         this.ratingStar = ratingStar;
         this.comment = comment;
+        this.clReplay = clReplay;
+        this.shopName = shopName;
+        this.reply = reply;
     }
 
     public int getAvt() {
@@ -53,5 +59,29 @@ public class Comment {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public Boolean isClReplay() {
+        return clReplay;
+    }
+
+    public void setClReplay(Boolean clReplay) {
+        this.clReplay = clReplay;
+    }
+
+    public String getShopName() {
+        return shopName;
+    }
+
+    public void setShopName(String shopName) {
+        this.shopName = shopName;
+    }
+
+    public String getReply() {
+        return reply;
+    }
+
+    public void setReply(String reply) {
+        this.reply = reply;
     }
 }

@@ -9,6 +9,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rating.R;
@@ -38,6 +39,9 @@ class CommentVH extends RecyclerView.ViewHolder {
     public TextView tvDateTime;
     public RatingBar rbStarRating;
     public TextView tvComment;
+    public TextView tvShopName;
+    public TextView tvReply;
+    public ConstraintLayout clReply;
     public CommentVH(@NonNull View itemView) {
         super(itemView);
 
@@ -46,6 +50,9 @@ class CommentVH extends RecyclerView.ViewHolder {
         tvDateTime = itemView.findViewById((R.id.tv_date));
         rbStarRating = itemView.findViewById(R.id.rb_star_rating_bar);
         tvComment = itemView.findViewById(R.id.tv_comment);
+        tvShopName = itemView.findViewById(R.id.tv_shop_name);
+        tvReply = itemView.findViewById(R.id.tv_reply);
+        clReply = itemView.findViewById(R.id.cl_reply);
     }
 }
 
@@ -91,6 +98,13 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             commentVH.tvDateTime.setText(comment.getDateTime());
             commentVH.tvName.setText(comment.getName());
             commentVH.tvComment.setText(comment.getComment());
+            if(comment.isClReplay()) {
+                commentVH.clReply.setVisibility(View.VISIBLE);
+            } else {
+                commentVH.clReply.setVisibility(View.GONE);
+            }
+            commentVH.tvShopName.setText(comment.getShopName());
+            commentVH.tvReply.setText(comment.getReply());
         } else if(holder instanceof FilterVH) {
             FilterVH filterVH = (FilterVH) holder;
             filterVH.rbFiveStar.setRating(5);
