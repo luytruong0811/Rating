@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         rvComment = findViewById(R.id.rv_comment);
         rvComment.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.VERTICAL,false);
         rvComment.setLayoutManager(linearLayoutManager);
         CommentViewModel commentViewModel = new ViewModelProvider(this).get(CommentViewModel.class);
         commentViewModel.getListCommentLiveData().observe(this, comments -> {

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -100,7 +99,6 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             filterVH.rbTwoStar.setRating(2);
             filterVH.rbOneStar.setRating(1);
         }
-
     }
 
     @Override
@@ -109,10 +107,5 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             return comments.size();
         }
         return 0;
-    }
-
-
-    public  interface  ItemClickListener {
-        void getData(Comment comment);
     }
 }
