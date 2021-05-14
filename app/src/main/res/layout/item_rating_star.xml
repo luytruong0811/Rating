@@ -7,13 +7,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/all"
+        android:id="@+id/cl_all"
         android:layout_width="107dp"
         android:layout_height="38dp"
+        android:clickable="true"
         android:background="@drawable/custom_category"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="RtlCompat">
+        tools:ignore="RtlCompat"
+        android:focusable="true">
 
         <TextView
             android:id="@+id/tv_all"
@@ -58,12 +60,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/comment"
+        android:id="@+id/cl_comment"
         android:layout_width="107dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_category"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/all"
+        app:layout_constraintStart_toEndOf="@id/cl_all"
         android:layout_marginStart="4dp"
         tools:ignore="RtlCompat">
 
@@ -110,12 +112,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/media"
+        android:id="@+id/cl_media"
         android:layout_width="107dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_category"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/comment"
+        app:layout_constraintStart_toEndOf="@id/cl_comment"
         android:layout_marginStart="3dp"
         tools:ignore="RtlCompat">
 
@@ -244,7 +246,7 @@
             android:id="@+id/tv_four_star_amount"
             android:layout_width="16dp"
             android:layout_height="15dp"
-            android:text="@string/amount"
+            android:text="@string/amount_four"
             android:textSize="12sp"
             android:lineHeight="15dp"
             android:textColor="#1A1A1A"
@@ -295,7 +297,7 @@
             android:id="@+id/tv_three_star_amount"
             android:layout_width="16dp"
             android:layout_height="15dp"
-            android:text="@string/amount"
+            android:text="@string/amount_four"
             android:textSize="12sp"
             android:lineHeight="15dp"
             android:textColor="#1A1A1A"
@@ -346,7 +348,7 @@
             android:id="@+id/tv_two_star_amount"
             android:layout_width="16dp"
             android:layout_height="15dp"
-            android:text="@string/amount"
+            android:text="@string/amount_two"
             android:textSize="12sp"
             android:lineHeight="15dp"
             android:textColor="#1A1A1A"
@@ -397,7 +399,7 @@
             android:id="@+id/tv_one_star_amount"
             android:layout_width="16dp"
             android:layout_height="15dp"
-            android:text="@string/amount"
+            android:text="@string/amount_one"
             android:textSize="12sp"
             android:lineHeight="15dp"
             android:textColor="#1A1A1A"

@@ -21,6 +21,7 @@
         
         <ImageView
             android:id="@+id/iv_path"
+            android:contextClickable="true"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:paddingStart="11dp"
@@ -37,7 +38,8 @@
             android:layout_marginTop="10dp"
             tools:ignore="KeyboardInaccessibleWidget,NewApi,VectorDrawableCompat"
             android:layout_marginLeft="10dp"
-            android:contentDescription="@string/iv_path" />
+            android:contentDescription="@string/iv_path"
+            tools:targetApi="m" />
 
         <TextView
             android:id="@+id/tv_title"
@@ -93,6 +95,7 @@
         android:id="@+id/rv_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:overScrollMode="never"
         android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/rating_toolbar"
         android:layout_marginTop="16dp"

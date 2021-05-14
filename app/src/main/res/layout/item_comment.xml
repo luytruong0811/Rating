@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="24dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -12,7 +12,8 @@
         android:layout_height="40dp"
         android:src="@drawable/avt1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -59,6 +60,84 @@
         tools:targetApi="p"
         tools:ignore="RtlCompat" />
 
+    <LinearLayout
+        android:id="@+id/ln_image"
+        android:layout_width="wrap_content"
+        android:layout_height="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_avt"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/iv_image1"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:src="@drawable/iv1"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/iv_image2"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:src="@drawable/iv2"
+            android:paddingStart="2dp"
+            tools:ignore="ContentDescription,RtlCompat,RtlSymmetry"/>
+
+        <ImageView
+            android:id="@+id/iv_image3"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:paddingStart="2dp"
+            android:src="@drawable/iv3"
+            tools:ignore="ContentDescription,RtlCompat,RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/iv_image4"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:paddingStart="2dp"
+            android:src="@drawable/iv4"
+            tools:ignore="ContentDescription,RtlCompat,RtlSymmetry" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fr_more_image"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:paddingStart="2dp"
+            tools:ignore="RtlCompat,RtlSymmetry">
+            <ImageView
+                android:id="@+id/iv_image5"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:src="@drawable/iv1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="ContentDescription,RtlCompat,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tv_more_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#66000000"
+                android:text="@string/_9"
+                app:layout_constraintTop_toTopOf="@id/iv_image5"
+                app:layout_constraintBottom_toBottomOf="@id/iv_image5"
+                app:layout_constraintStart_toStartOf="@id/iv_image5"
+                app:layout_constraintEnd_toEndOf="@id/iv_image5"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:lineHeight="25sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/lexend_semibold"
+                tools:ignore="UnusedAttribute"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/tv_comment"
         android:layout_width="wrap_content"
@@ -69,16 +148,31 @@
         android:textColor="@color/black"
         android:text="@string/comment_"
         tools:targetApi="p"
-        app:layout_constraintTop_toBottomOf="@id/iv_avt"
+        app:layout_constraintTop_toBottomOf="@id/ln_image"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_see_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/see_more"
+        android:textSize="14sp"
+        android:lineHeight="18dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/lexend_regular"
+        app:layout_constraintTop_toBottomOf="@id/tv_comment"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="invisible"
+        tools:ignore="UnusedAttribute" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_reply"
         android:layout_width="343dp"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_comment"
+        app:layout_constraintTop_toBottomOf="@id/tv_see_more"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         android:visibility="invisible">

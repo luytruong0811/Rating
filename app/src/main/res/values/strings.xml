@@ -19,4 +19,9 @@
     <string name="comment_">I am very satisfied with this product</string>
     <string name="show_name">Angela Soraphiare Shop</string>
     <string name="reply">Hi, thank you for feedback</string>
+    <string name="amount_four">(3)</string>
+    <string name="amount_two">(1)</string>
+    <string name="amount_one">(0)</string>
+    <string name="see_more">See more</string>
+    <string name="_9">+9</string>
 </resources>
